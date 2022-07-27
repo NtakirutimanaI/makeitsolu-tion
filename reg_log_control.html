@@ -1,0 +1,69 @@
+<?php
+include "connection.php";
+
+if(isset($_POST['reg_user'])){
+    $username=$_POST['username'];
+    $email=$_POST['email'];
+    $phone=$_POST['phone'];
+    $password1=$_POST['password_1'];
+    $encry_pwd1=md5($password1);
+    
+
+    $sql="INSERT INTO users(`name`,`email`,`phone`,`password`) VALUES('$username','$email','$phone','$encry_pwd1')";
+    $result=mysqli_query($con,$sql);
+    if($result){
+        echo 'Data Inserted!';
+    }
+    else{
+        die(mysqli_error($result));
+    }
+}
+?>
+
+<script type="text/javascript">
+        function validate(){
+            if(document.myFormRegister.username.value==""){
+                alert("Please enter your names");
+                document.myFormRegister.username.focus();
+                return false;
+            }
+            if(document.myFormRegister.email.value !=""){
+
+                var emailId=document.myFormRegister.email.value();
+                atpos = emailID.indexOf("@");
+                dotpos = emailID.lastIndexOf(".");
+         
+                if (atpos < 1 || ( dotpos - atpos < 2 )) {
+                alert("Please enter correct email ID")
+                document.myFormRegister.email.focus() ;
+                alert("Please enter your email");
+                return true;
+  
+              }
+                return false;
+            }
+            if(document.myFormRegister.phone.value==""){
+                alert("Please enter the names");
+                document.myFormRegister.phone.focus();
+                return false;
+            }
+            if(document.myFormRegister.password_1.value==""){
+                alert("Please enter the names");
+                document.myFormRegister.password_1.focus();
+                return false;
+            }
+            if(document.myFormRegister.password_2.value==""){
+                alert("Please enter the names");
+                document.myFormRegister.password_2.focus();
+                return false;
+            }
+            if(password_1 !=password_2){
+                alert("Passwords does not match!");
+                return false;
+            }
+            return true;
+
+        }
+
+</script>
+

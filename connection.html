@@ -1,0 +1,17 @@
+<?php
+$dbhost ="localhost"; 
+$dbuser ="root";
+$dbpass ="";
+$dbname ="coproriz_data";
+
+$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+
+if($con){
+    // echo("Database Connected!");
+    //header("location:view-messages.php");
+}else{
+    die(mysqli_error($con));
+}
+
+
+?>

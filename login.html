@@ -1,0 +1,79 @@
+<?php
+include  'reg_log_control.php';
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+    
+      <div class="hero">
+                <div class="form-box">
+                <div class="button-box">
+                    <div class="btn"></div>
+                    <div class="btns"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                </div>
+
+                <div class="social-icons">
+                     <img src="./image_login/img1.png" alt="">
+                     <img src="./image_login/img4.png" alt="">
+                     <img src="./image_login/img2.png" alt="">
+                </div>
+                
+
+                      <form method="POST" action="" id="login" class="input-group" name="myFormLogin" onsubmit="return(validate());">
+                   
+                           <input type="text" class="input-field" name="username" placeholder="User Name" >
+                           <input type="password" class="input-field"  name="password" placeholder="Enter Password">
+                           <input type="checkbox" class="check-box"><span>Remember Password</span>
+                           <input type="submit" class="submit-btn" name="login_user" value="Log In">
+                      </form>
+                      <form method="POST"  action="" id="register" class="input-group" name="myFormRegister" onsubmit="return(validate());>
+                      
+                           <input type="text" class="input-field" name="username" placeholder=" Name">
+                           <input type="email" class="input-field" name="email" placeholder=" Email">
+                           <input type="text" class="input-field" name="phone" placeholder=" Phone">
+                           <input type="password" class="input-field" name="password_1" placeholder=" Enter Password">
+                           <input type="password" class="input-field" name="password_2" placeholder=" Re-Password">
+                           <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+                           <input type="submit" class="submit-btn" name="reg_user" value="Register">
+                      </form>
+            </div>
+            
+      </div>
+
+
+      <script>
+       var x = document.getElementById("login");
+       var y = document.getElementById("register");
+       var z = document.getElementById("btn");
+
+       
+       function register(){
+           x.style.left = "-400px";
+           y.style.left = "50px";
+           z.style.left = "110px";
+       }
+
+       function login(){
+           x.style.left = "50px";
+           y.style.left = "450px";
+           z.style.left = "0";
+       }
+
+      
+
+      </script>
+</body>
+</html>
